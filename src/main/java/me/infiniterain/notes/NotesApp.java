@@ -1,5 +1,9 @@
 package me.infiniterain.notes;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -23,7 +27,22 @@ public class NotesApp extends Application {
         mainStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        File file = new File("notes.json");
+        try {
+            if (!file.exists()) {
+                if (!file.createNewFile()) {
+                    System.out.println("Unable to create \"notes.json\".");
+                } else {
+                    PrintWriter p = new PrintWriter(new FileOutputStream(file, false));
+                    p.print("[]");
+                    p.close();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         launch(args);
     }
 
