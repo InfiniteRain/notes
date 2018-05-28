@@ -2,28 +2,43 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0"
-          prefWidth="407.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="me.infiniterain.notes.UpdateStageController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.infiniterain.notes.UpdateStageController">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints maxHeight="374.0" minHeight="10.0" prefHeight="193.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="374.0" minHeight="10.0" prefHeight="193.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <TextArea fx:id="txtContent" prefHeight="212.0" prefWidth="407.0"/>
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="1">
             <buttons>
-                <Button fx:id="btnConfirm" onAction="#onBtnConfirm" mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" text="Confirm"/>
-                <Button fx:id="btnCancel" onAction="#onBtnCancel" mnemonicParsing="false" text="Cancel"/>
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#onBtnCancel" text="Cancel" />
+                <Button fx:id="btnConfirm" mnemonicParsing="false" onAction="#onBtnConfirm" prefHeight="31.0" prefWidth="120.0" text="Confirm" />
             </buttons>
         </ButtonBar>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="120.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.0" minWidth="10.0" prefWidth="287.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="167.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextArea fx:id="txtContent" prefHeight="212.0" prefWidth="407.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label id="labelwithimage" prefHeight="21.0" prefWidth="115.0" text="Title:" />
+                <Label id="labelwithimage" layoutX="10.0" layoutY="13.0" prefHeight="21.0" prefWidth="115.0" text="Content:" GridPane.rowIndex="1" />
+                <TextField fx:id="txtTitle" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
     </children>
 </GridPane>

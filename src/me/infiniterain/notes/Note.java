@@ -2,15 +2,25 @@ package me.infiniterain.notes;
 
 public class Note {
 	private int id;
+	private String title;
 	private String content;
 
-	public Note(int id, String content) {
+	Note(int id, String title, String content) {
 		this.id = id;
+		this.title = title;
 		this.content = content;
 	}
 
-	public int getId() {
+	int getId() {
 		return id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getContent() {
@@ -23,6 +33,7 @@ public class Note {
 
 	@Override
 	public String toString() {
-		return content;
+		return title;
 	}
+
 }
