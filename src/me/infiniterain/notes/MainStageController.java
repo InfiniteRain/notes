@@ -18,12 +18,12 @@ public class MainStageController implements Initializable {
 	public Button btnNew;
 	public Button btnDelete;
 	public Button btnEdit;
-	public ListView lstNotes;
+	public ListView<Note> lstNotes;
 	public TextArea txtView;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
+		lstNotes.setItems(NotesApp.notes);
 	}
 
 	public void onBtnNew(ActionEvent actionEvent) throws IOException {

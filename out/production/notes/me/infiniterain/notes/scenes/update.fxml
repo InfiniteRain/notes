@@ -9,7 +9,7 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0"
           prefWidth="407.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="me.infiniterain.notes.UpdateController">
+          fx:controller="me.infiniterain.notes.UpdateStageController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
     </columnConstraints>
@@ -18,7 +18,7 @@
         <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES"/>
     </rowConstraints>
     <children>
-        <TextArea fx:id="txtId" prefHeight="212.0" prefWidth="407.0"/>
+        <TextArea fx:id="txtContent" prefHeight="212.0" prefWidth="407.0"/>
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="1">
             <buttons>
                 <Button fx:id="btnConfirm" onAction="#onBtnConfirm" mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" text="Confirm"/>
