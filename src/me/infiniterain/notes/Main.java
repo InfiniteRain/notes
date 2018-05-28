@@ -1,7 +1,5 @@
-package sample;
+package me.infiniterain.notes;
 
-import com.sun.javafx.collections.IntegerArraySyncer;
-import java.util.function.IntBinaryOperator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
