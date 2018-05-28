@@ -41,13 +41,13 @@ public class UpdateStageController implements Initializable {
 				id++;
 			}
 
-			NotesApp.notes.add(id, new Note(id, txtTitle.getText(), txtContent.getText()));
+			NotesApp.notes.add(new Note(id, txtTitle.getText(), txtContent.getText()));
 
 			updateWindow.close();
 		} else {
 			editingNote.setTitle(txtTitle.getText());
 			editingNote.setContent(txtContent.getText());
-			listView.getItems().set(editingNote.getId(), editingNote);
+			listView.getItems().set(listView.getSelectionModel().getSelectedIndex(), editingNote);
 
 			updateWindow.close();
 		}

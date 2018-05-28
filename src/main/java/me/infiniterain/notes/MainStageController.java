@@ -41,7 +41,7 @@ public class MainStageController implements Initializable {
 	}
 
 	public void onBtnNew() throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("scenes/update.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/update.fxml"));
 		Stage updateStage = new Stage(StageStyle.DECORATED);
 		updateStage.setScene(new Scene(loader.load()));
 		updateStage.setTitle("New note");
@@ -52,7 +52,7 @@ public class MainStageController implements Initializable {
 	public void onBtnEdit() throws IOException {
 		Note selectedNote = lstNotes.getSelectionModel().getSelectedItem();
 		if (selectedNote != null) {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("scenes/update.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/scenes/update.fxml"));
 			Stage updateStage = new Stage(StageStyle.DECORATED);
 			updateStage.setScene(new Scene(loader.load()));
 			UpdateStageController controller = loader.getController();
@@ -76,7 +76,8 @@ public class MainStageController implements Initializable {
 		Optional<ButtonType> result = alert.showAndWait();
 
 		if (result.isPresent() && result.get() == ButtonType.YES) {
-			lstNotes.getItems().remove(selectedNote.getId());
+			lstNotes.getItems().remove(lstNotes.getSelectionModel().getSelectedIndex());
+			txtView.setText("");
 		}
 	}
 }
