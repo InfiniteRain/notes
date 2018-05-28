@@ -12,50 +12,51 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class UpdateStageController implements Initializable {
-	public TextField txtTitle;
-	public TextArea txtContent;
-	public Button btnConfirm;
-	public Button btnCancel;
+    public TextField txtTitle;
+    public TextArea txtContent;
+    public Button btnConfirm;
+    public Button btnCancel;
 
-	private Note editingNote;
-	private ListView<Note> listView;
+    private Note editingNote;
+    private ListView<Note> listView;
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) { }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    }
 
-	public void editNote(Note note, ListView<Note> listView) {
-		this.editingNote = note;
-		this.listView = listView;
+    public void editNote(Note note, ListView<Note> listView) {
+        this.editingNote = note;
+        this.listView = listView;
 
-		txtTitle.setText(note.getTitle());
-		txtContent.setText(note.getContent());
-	}
+        txtTitle.setText(note.getTitle());
+        txtContent.setText(note.getContent());
+    }
 
-	public void onBtnConfirm(ActionEvent actionEvent) {
-		Node source = (Node) actionEvent.getSource();
-		Stage updateWindow = (Stage) source.getScene().getWindow();
+    public void onBtnConfirm(ActionEvent actionEvent) {
+        Node source = (Node) actionEvent.getSource();
+        Stage updateWindow = (Stage) source.getScene().getWindow();
 
-		if (editingNote == null) {
-			int id = 0;
-			while (NotesApp.noteIdExists(id)) {
-				id++;
-			}
+        if (editingNote == null) {
+            int id = 0;
+            while (NotesApp.noteIdExists(id)) {
+                id++;
+            }
 
-			NotesApp.notes.add(new Note(id, txtTitle.getText(), txtContent.getText()));
+            NotesApp.notes.add(new Note(id, txtTitle.getText(), txtContent.getText()));
 
-			updateWindow.close();
-		} else {
-			editingNote.setTitle(txtTitle.getText());
-			editingNote.setContent(txtContent.getText());
-			listView.getItems().set(listView.getSelectionModel().getSelectedIndex(), editingNote);
+            updateWindow.close();
+        } else {
+            editingNote.setTitle(txtTitle.getText());
+            editingNote.setContent(txtContent.getText());
+            listView.getItems().set(listView.getSelectionModel().getSelectedIndex(), editingNote);
 
-			updateWindow.close();
-		}
-	}
+            updateWindow.close();
+        }
+    }
 
-	public void onBtnCancel(ActionEvent actionEvent) {
-		Node source = (Node) actionEvent.getSource();
-		Stage updateWindow = (Stage) source.getScene().getWindow();
-		updateWindow.close();
-	}
+    public void onBtnCancel(ActionEvent actionEvent) {
+        Node source = (Node) actionEvent.getSource();
+        Stage updateWindow = (Stage) source.getScene().getWindow();
+        updateWindow.close();
+    }
 }
