@@ -21,14 +21,17 @@
     </rowConstraints>
     <children>
         <ListView fx:id="lstNotes" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="2"/>
-        <TextArea fx:id="txtView" disable="true" prefHeight="366.0" prefWidth="432.0" wrapText="true" style="-fx-opacity: 1.0;"/>
+        <TextArea fx:id="txtView" disable="true" prefHeight="366.0" prefWidth="432.0" wrapText="true"
+                  style="-fx-opacity: 1.0;"/>
         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
             <children>
                 <Button fx:id="btnNew" onAction="#onBtnNew" layoutY="1.0" mnemonicParsing="false" prefHeight="40.0"
                         prefWidth="54.0" text="New"/>
-                <Button fx:id="btnDelete" onAction="#onBtnDelete" layoutX="303.0" layoutY="1.0" mnemonicParsing="false" prefHeight="40.0"
+                <Button fx:id="btnDelete" onAction="#onBtnDelete" layoutX="303.0" layoutY="1.0" mnemonicParsing="false"
+                        prefHeight="40.0"
                         prefWidth="134.0" text="Delete Selected"/>
-                <Button fx:id="btnEdit" onAction="#onBtnEdit" layoutX="197.0" layoutY="1.0" mnemonicParsing="false" prefHeight="40.0"
+                <Button fx:id="btnEdit" onAction="#onBtnEdit" layoutX="197.0" layoutY="1.0" mnemonicParsing="false"
+                        prefHeight="40.0"
                         text="Edit Selected"/>
             </children>
         </Pane>
